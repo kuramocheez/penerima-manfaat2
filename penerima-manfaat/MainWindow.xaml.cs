@@ -281,5 +281,9 @@ namespace penerima_manfaat
             InitDataView();
         }
 
+        private void btnKategori_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
