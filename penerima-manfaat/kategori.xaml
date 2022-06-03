@@ -5,20 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:penerima_manfaat"
         mc:Ignorable="d"
-        Title="kategori" Height="450" Width="800">
-    <Grid Background="#FF56B9C9">
-        <Label Content="Kategori Jenis Paket" HorizontalAlignment="Left" Margin="324,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Label Content="Kategori" HorizontalAlignment="Left" Margin="224,57,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Nominal Paket" HorizontalAlignment="Left" Margin="224,106,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="224,155,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="342,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" BorderBrush="#FF04060E" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="342,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" BorderBrush="#FF04060E" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="342,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" BorderBrush="#FF04060E" FontSize="14"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="144" Margin="167,255,0,0" VerticalAlignment="Top" Width="485"/>
-        <Button Content="Insert" HorizontalAlignment="Left" Height="27" Margin="206,214,0,0" VerticalAlignment="Top" Width="73" Background="#FFAA5050" BorderBrush="{x:Null}" Foreground="White" FontSize="14"/>
-        <Button Content="Update" HorizontalAlignment="Left" Height="27" Margin="312,214,0,0" VerticalAlignment="Top" Width="73" Background="#FFAA5050" Foreground="White" FontSize="14"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Height="27" Margin="423,214,0,0" VerticalAlignment="Top" Width="73" Background="#FFAA5050" Foreground="White" FontSize="14"/>
-        <Button Content="Reset" HorizontalAlignment="Left" Height="27" Margin="533,214,0,0" VerticalAlignment="Top" Width="73" Background="#FFAA5050" Foreground="White" FontSize="14"/>
+        Title="kategori" Height="768" Width="1366" WindowState="Maximized">
+    <Grid ShowGridLines="True">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Untitled-1.png"/>
+        </Grid.Background>
+        <Label Content="Kategori Jenis Paket" HorizontalAlignment="Left" Margin="460,82,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" FontFamily="Comic Sans MS" Width="526" BorderThickness="4,4,4,4"/>
+        <Label Content="Kategori" HorizontalAlignment="Left" Margin="376,256,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Segoe UI" FontWeight="Normal"/>
+        <Label Content="Nominal Paket" HorizontalAlignment="Left" Margin="376,314,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Segoe UI" FontWeight="Normal"/>
+        <TextBox x:Name="nominalPaket" HorizontalAlignment="Left" Height="35" Margin="534,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="438" BorderBrush="#FF04060E" FontSize="14" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.264"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="kategori1" HorizontalAlignment="Left" Height="35" Margin="534,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" BorderBrush="#FF04060E" FontSize="14"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Center" Height="219" Margin="0,416,0,0" VerticalAlignment="Top" Width="782" ItemsSource="{Binding Path=kategori_jenispaket}" MouseDoubleClick="dataGrid_MouseDoubleClick">
+        </DataGrid>
+        <Button x:Name="insert" Content="Insert" HorizontalAlignment="Left" Height="28" Margin="376,368,0,0" VerticalAlignment="Top" Width="77" Background="#FFAA5050" BorderBrush="{x:Null}" Foreground="White" FontSize="14" Click="insert_Click"/>
+        <Button x:Name="update" Content="Update" HorizontalAlignment="Left" Height="28" Margin="552,368,0,0" VerticalAlignment="Top" Width="78" Background="#FFAA5050" Foreground="White" FontSize="14" Click="update_Click"/>
+        <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" Height="28" Margin="753,368,0,0" VerticalAlignment="Top" Width="78" Background="#FFAA5050" Foreground="White" FontSize="14" Click="delete_Click"/>
+        <Button x:Name="reset" Content="Reset" HorizontalAlignment="Left" Height="28" Margin="947,368,0,0" VerticalAlignment="Top" Width="77" Background="#FFAA5050" Foreground="White" FontSize="14" Click="reset_Click"/>
+        <Button x:Name="btnAsessor" Content="" HorizontalAlignment="Left" Margin="98,20,0,0" VerticalAlignment="Top" Width="50" Height="52" Click="btnAsessor_Click" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/previous.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="back" Content="Back" HorizontalAlignment="Left" Margin="102,64,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold"/>
 
     </Grid>
 </Window>

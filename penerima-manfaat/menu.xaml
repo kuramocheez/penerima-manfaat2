@@ -1,0 +1,41 @@
+﻿<Window x:Class="penerima_manfaat.menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:penerima_manfaat"
+        mc:Ignorable="d"
+        Title="menu" Height="768" Width="1366" WindowState="Normal" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Lentera Mudita Tadulako Logo Original Logo.png" SizeToContent="Manual">
+    <Grid UseLayoutRounding="False">
+        <Grid.Background>
+            <ImageBrush ImageSource="/GRADIENT-BACKGROUND-thumb-hd.png"/>
+        </Grid.Background>
+        <Label x:Name="judul" Content="HALAMAN MENU&#xA;" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" FontSize="72" FontFamily="Comic Sans MS" FontWeight="Bold" BorderThickness="4,4,4,4" Height="110" Width="660">
+            <Label.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.BorderBrush>
+        </Label>
+        <Button x:Name="penerima" Margin="364,163,862,460" RenderTransformOrigin="0.524,0.722" Click="penerima_Click" BorderBrush="{x:Null}" Content=" " VerticalContentAlignment="Stretch">
+            <Button.Background>
+                <ImageBrush ImageSource="/unnamed.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="asessor" Content="" Margin="364,342,852,281" IsDefault="True" BorderBrush="{x:Null}" RenderTransformOrigin="0.519,0.524" Click="asessor_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/profile.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="kategori" Content="" Margin="364,535,852,99" BorderBrush="{x:Null}" RenderTransformOrigin="0.566,0.849" Click="kategori_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/checklist.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Data Penerima Manfaat" HorizontalAlignment="Left" Margin="546,208,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="36"/>
+        <Label Content="Asessor" HorizontalAlignment="Left" Margin="548,381,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="36"/>
+        <Label Content="Kategori" HorizontalAlignment="Left" Margin="546,569,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="36"/>
+
+    </Grid>
+</Window>

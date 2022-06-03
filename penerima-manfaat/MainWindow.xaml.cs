@@ -52,7 +52,7 @@ namespace penerima_manfaat
                 conn.Open();
                 cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT nik as NIK, kartuKeluarga as `Nomor KK`, nama as Nama, DATE_FORMAT(tgl_lahir, '%d/%M/%Y') as `Tanggal Lahir`, jenis_kelamin as `Jenis Kelamin`, agama as Agama, kotaKabupaten, alamat as Alamat, pekerjaan as Pekerjaan, no_telp as `No. Telpon`, kriteria as Kriteria, penghasilan as Penghasilan, golDarah as `Golongan Darah`, status as Status, keterangan as Keterangan FROM data_penerimamanfaat";
+                cmd.CommandText = "SELECT nik as NIK, kartuKeluarga as `Nomor KK`, nama as Nama, DATE_FORMAT(tgl_lahir, '%d/%M/%Y') as `Tanggal Lahir`, jenis_kelamin as `Jenis Kelamin`, agama as Agama, kotaKabupaten, alamat as Alamat, pekerjaan as Pekerjaan, no_telp , kriteria as Kriteria, penghasilan as Penghasilan, golDarah as `Golongan Darah`, status as Status, keterangan as Keterangan FROM data_penerimamanfaat";
                 MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
                 dataAdapter.Fill(ds, "data_penerimamanfaat");
                 conn.Close();
@@ -71,7 +71,7 @@ namespace penerima_manfaat
                 conn.Open();
                 cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO data_penerimamanfaat VALUES ('" + pm.nik + "','" + pm.kartuKeluarga + "','" + pm.nama + "','" + pm.tanggalLahir + "','" + pm.jenisKelamin + "','" + pm.agama + "','" + pm.kotaKabupaten + "','" + pm.alamat + "','" + pm.pekerjaan + "','" + pm.noTelpon + "','" + pm.kriteria + "','" + pm.penghasilan + "','" + pm.golDarah + "','" + pm.status + "','" + pm.keterangan + "')";
+                cmd.CommandText = "INSERT INTO data_penerimamanfaat VALUES ('" + pm.nik + "','" + pm.kartuKeluarga + "','" + pm.nama + "','" + pm.tanggalLahir + "','" + pm.jenisKelamin + "','" + pm.agama + "','" + pm.alamat + "','" + pm.kotaKabupaten + "','" + pm.pekerjaan + "','" + pm.noTelpon + "','" + pm.kriteria + "','" + pm.penghasilan + "','" + pm.golDarah + "','" + pm.status + "','" + pm.keterangan + "')";
                 cmd.ExecuteNonQuery();
                 status = true;
                 conn.Close();
@@ -211,7 +211,7 @@ namespace penerima_manfaat
             kota.Text = dr["kotaKabupaten"].ToString();
             alamat.Text = dr["Alamat"].ToString();
             pekerjaan.Text = dr["Pekerjaan"].ToString();
-            noTelpon.Text = dr["No. Telpon"].ToString();
+            noTelpon.Text = dr["no_telp"].ToString();
             kriteria.Text = dr["Kriteria"].ToString();
             penghasilan.Text = dr["Penghasilan"].ToString();
             golDarah.Text = dr["Golongan Darah"].ToString();
@@ -283,7 +283,17 @@ namespace penerima_manfaat
 
         private void btnKategori_Click(object sender, RoutedEventArgs e)
         {
-            
+            kategori kt = new kategori();
+            kt.Show();
+            this.Hide();
+        }
+
+        private void btnAsessor_Click(object sender, RoutedEventArgs e)
+        {
+            menu w = new menu();
+            w.Show();
+            this.Close();
+
         }
     }
 }
